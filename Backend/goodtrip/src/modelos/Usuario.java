@@ -1,5 +1,7 @@
 package modelos;
 
+import java.math.BigInteger;
+
 public class Usuario {
 	//atributos 
 	private int id;

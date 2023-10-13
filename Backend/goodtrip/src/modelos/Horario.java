@@ -1,9 +1,12 @@
 package modelos;
 
+import java.sql.Time;
+
 public class Horario {
 	//atributos
 	private int id;
-	private float hora_saida;
+	private Time hora_saida;
+	private Time tempo_viagem;
 	
 	private Cidade cidade;
 	
@@ -11,12 +14,12 @@ public class Horario {
 	public Horario() {
 	}
 
-	public Horario(int id, float hora_saida) {
+	public Horario(int id, Time hora_saida) {
 		this.id = id;
 		this.hora_saida = hora_saida;
 	}
 
-	public Horario(float hora_saida) {
+	public Horario(Time hora_saida) {
 		this.hora_saida = hora_saida;
 	}
 
@@ -29,12 +32,21 @@ public class Horario {
 		this.id = id;
 	}
 
-	public float getHora_saida() {
+	public Time getHora_saida() {
 		return hora_saida;
 	}
 
-	public void setHora_saida(float hora_saida) {
+	public void setHora_saida(Time hora_saida) {
 		this.hora_saida = hora_saida;
+	}
+
+	
+	public Time getTempo_viagem() {
+		return tempo_viagem;
+	}
+
+	public void setTempo_viagem(Time tempo_viagem) {
+		this.tempo_viagem = tempo_viagem;
 	}
 
 	//tostring

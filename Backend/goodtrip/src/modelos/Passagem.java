@@ -3,7 +3,7 @@ package modelos;
 public class Passagem {
 	//atributos
 	private int id;
-	private int data_viagem;
+	private String data_viagem;
 	private String poltrona;
 	private double valor;
 	
@@ -14,14 +14,14 @@ public class Passagem {
 	public Passagem() {
 	}
 
-	public Passagem(int id, int data_viagem, String poltrona, int valor) {
+	public Passagem(int id, String data_viagem, String poltrona, Double valor) {
 		this.id = id;
 		this.data_viagem = data_viagem;
 		this.poltrona = poltrona;
 		this.valor = valor;
 	}
 
-	public Passagem(int data_viagem, String poltrona, int valor) {
+	public Passagem(String data_viagem, String poltrona, Double valor) {
 		this.data_viagem = data_viagem;
 		this.poltrona = poltrona;
 		this.valor = valor;
@@ -36,11 +36,11 @@ public class Passagem {
 		this.id = id;
 	}
 
-	public int getData_viagem() {
+	public String getData_viagem() {
 		return data_viagem;
 	}
 
-	public void setData_viagem(int data_viagem) {
+	public void setData_viagem(String data_viagem) {
 		this.data_viagem = data_viagem;
 	}
 
@@ -65,6 +65,11 @@ public class Passagem {
 	public String toString() {
 		return "Passagem [id=" + id + ", data_viagem=" + data_viagem + ", poltrona=" + poltrona + ", valor=" + valor
 				+ "]";
+	}
+
+	public Passagem getUsuario() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

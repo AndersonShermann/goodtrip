@@ -126,7 +126,6 @@ public class UsuarioDAO {
 	    }
 	
 	//delete
-	//delete
 	public void delete(int id) {
 		String sql = "DELETE FROM usuario where id_usuario = ?;";
         
@@ -158,7 +157,6 @@ public class UsuarioDAO {
 	}
 	
 	//readById
-	//readById
 	public Usuario readById(int id) {
 		Usuario usuario = new Usuario();
 		
@@ -175,13 +173,13 @@ public class UsuarioDAO {
             pstm.setInt(1, id);
                     
             rset = pstm.executeQuery();
-            rset.next();
-            
-            usuario.setId(rset.getInt("id_usuario"));
-            usuario.setNome(rset.getString("nome_usuario"));
-            usuario.setCpf(rset.getInt("cpf"));
-            usuario.setSenha(rset.getString("senha"));
-            
+            if (rset.next()) {
+                usuario.setId(rset.getInt("id_usuario"));
+                usuario.setNome(rset.getString("nome_usuario"));
+                usuario.setCpf(rset.getInt("cpf"));
+                usuario.setSenha(rset.getString("senha"));	
+            }
+             
         }catch(Exception e){
           e.printStackTrace();
         }finally{

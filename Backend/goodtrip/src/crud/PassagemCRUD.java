@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import dao.PassagemDAO;
 import modelos.Passagem;
+import modelos.Usuario;
 
 public class PassagemCRUD {
 
@@ -39,13 +40,35 @@ public class PassagemCRUD {
 				
 				break;
 			case 2:
-				System.out.println("Read");
+				for(Passagem p : passagemDAO.read()) {
+					System.out.println(p.toString());
+				}
 				break;
 			case 3:
-				System.out.println("update");
+				System.out.println("Id:");
+				id = s.nextInt();
+				s.nextLine();
+				
+				System.out.println("Valor");
+				valor = s.nextDouble();
+				
+				System.out.println("Poltrona:");
+				poltrona = s.next();
+				
+				System.out.println("Data:");
+				data = s.next();
+				
+				
+				Passagem passagem2 = new Passagem(id, data, poltrona, valor);
+				passagemDAO.update(passagem2);
 				break;
 			case 4:
-				System.out.println("delete");
+				System.out.println("Digite um id: ");
+				
+				id = s.nextInt();
+				s.nextLine();
+				
+				passagemDAO.delete(id);
 				break;
 			default:
 				break;

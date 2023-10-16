@@ -14,13 +14,21 @@ public class Horario {
 	public Horario() {
 	}
 
-	public Horario(int id, Time hora_saida) {
-		this.id = id;
+	public Horario(int time, Time hora_saida) {
+		this.id = time;
 		this.hora_saida = hora_saida;
 	}
 
 	public Horario(Time hora_saida) {
 		this.hora_saida = hora_saida;
+	}
+
+	public Horario(Time valueOf, Time valueOf2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Horario(int id2, Time valueOf, Time valueOf2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	//getters e setters
@@ -52,7 +60,7 @@ public class Horario {
 	//tostring
 	@Override
 	public String toString() {
-		return "Horario [id=" + id + ", hora_saida=" + hora_saida + "]";
+		return "Horario [id=" + id + ", hora_saida=" + hora_saida + ", tempo_viagem=" + tempo_viagem;
 	}
 	
 }

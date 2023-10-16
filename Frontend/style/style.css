@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    font-family: "Source Code Pro", monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Menu de Navegação */
+.navbar {
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px 10px #00000080;
+}
+
+.navbar-brand span {
+    font-family: "Raleway", sans-serif;
+    color: #2C74C6;
+    font-weight: 500;
+}
+
+.navbar-nav a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+}
+
+.navbar-nav a:hover {
+    color: #2C74C6;
+    font-weight: 700;
+}
+
+/* Apresentação Inicial */
+.carousel-caption {
+    backdrop-filter: blur(15px); 
+    box-shadow: 0 0 20px 5px #00000040;
+    border-radius: 10px;
+}
+
+/* Footer */
+
+footer {
+    font-size: .8rem;
+}
+
+#link a {
+    color: #707070;
+    font-weight: 400;
+}
+
+#link a:hover {
+    color: #2C74C6;
+    font-weight: 600;
+}
+
+/* Cards */
+
+.card-img-top:hover {
+    transition: 1s ease-in-out;
+    filter: blur(3px);
+}
+
+.card {
+    transform: scale(.9);
+    box-shadow: 10px 10px 5px #00000080;
+}
+
+.card:hover {
+    transition: .5s ease-in-out;
+    transform: scale(1.1) rotateZ(-5deg);
+    box-shadow: -10px 10px 20px #00000080;
+}
+

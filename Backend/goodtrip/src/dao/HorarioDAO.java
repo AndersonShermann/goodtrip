@@ -22,8 +22,8 @@ public class HorarioDAO {
 	            conn = ConnectionMySQL.createConnectionToMySQL();
 	            pstm = conn.prepareStatement(sql);
 	            
-	            pstm.setTime(1, horario.getHora_saida());
-	            pstm.setTime(2, horario.getTempo_viagem());
+	            pstm.setString(1, horario.getHora_saida());
+	            pstm.setString(2, horario.getTempo_viagem());
 	            pstm.setInt(3, 3);
 	            pstm.setInt(4, 4);
 	            
@@ -63,11 +63,11 @@ public class HorarioDAO {
 	            rset = pstm.executeQuery();
 	            
 	            while(rset.next()){
-	                Horario horario1 = new Horario();
+	                Horario horario1 = new Horario(rset.getInt("id_horario"), rset.getString("hora_saida"), rset.getString("tempo_viagem"));
 	                
-	                horario1.setId(rset.getInt("id_horario"));
-	                horario1.setHora_saida(rset.getTime("hora_saida"));;
-	                horario1.setTempo_viagem(rset.getTime("tempo_viagem"));;
+	                //horario1.setId(rset.getInt("id_horario"));
+	               // horario1.setHora_saida(rset.getString("hora_saida"));;
+	              //  horario1.setTempo_viagem(rset.getString("tempo_viagem"));;
 	                
 	                horario.add(horario1);
 	            }
@@ -103,8 +103,8 @@ public class HorarioDAO {
 		            conn = ConnectionMySQL.createConnectionToMySQL();
 		            pstm = conn.prepareCall(sql);
 		            
-		            pstm.setTime(1, horario.getHora_saida());
-		            pstm.setTime(2, horario.getTempo_viagem());
+		            pstm.setString(1, horario.getHora_saida());
+		            pstm.setString(2, horario.getTempo_viagem());
 		            pstm.setInt(3, 5);
 		            pstm.setInt(4, 6);
 		            pstm.setInt(5, horario.getId());

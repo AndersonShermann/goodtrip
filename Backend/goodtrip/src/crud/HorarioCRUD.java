@@ -27,13 +27,13 @@ public class HorarioCRUD {
 			
 			switch(opcao) {
 			case 1:
-				System.out.println("Hora Saída (HH:mm:ss)::");
+				System.out.println("Hora Saída (HH:mm:ss)");
 				hora_saida = s.nextLine();
 				
 				System.out.println("Tempo de Viagem:");
 				tempo_viagem = s.nextLine();
 				
-				Horario horario1 = new Horario(Time.valueOf(hora_saida), Time.valueOf(tempo_viagem));
+				Horario horario1 = new Horario(hora_saida, tempo_viagem);
 				
 				horarioDAO.create(horario1);
 				
@@ -56,7 +56,7 @@ public class HorarioCRUD {
 				tempo_viagem = s.nextLine();
 				
 				
-				Horario horario2 = new Horario(id, Time.valueOf(hora_saida), Time.valueOf(tempo_viagem));
+				Horario horario2 = new Horario(id, hora_saida, tempo_viagem);
 				horarioDAO.update(horario2);
 
 				

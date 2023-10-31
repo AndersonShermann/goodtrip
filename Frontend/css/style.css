@@ -1,0 +1,46 @@
+/* Paleta de cores 
+#89CDBE
+#272860
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background: #f5f5f5;
+}
+
+/* Menu Navegação */
+
+.navbar{
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px 5px #00000080;
+}
+
+.navbar a{
+    color: #272860;
+    transition: .3s ease-in-out;
+}
+
+#login{
+    background-color: #89CDBE;
+    border-radius: 10cap;
+}
+
+/* Formulário de Pesquisa */
+
+#searchBox{
+    color: #272860;
+}
+
+#searchButton {
+    background-color: #89CDBE;
+    color: #272860;
+}

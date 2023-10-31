@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/Front-end/css/style.css">
+    <script src="/Front-end/js/script.js"></script>
+    <title>GoodTrip</title>
+</head>
+<body>
+    <!--Menu de Navegação-->
+    <nav class="navbar navbar-expand-sm sticky-top p-0">
+        <div class="container-fluid">
+            <a href="/index.html" class="navbar-brand d-flex align-items-center text-muted">
+                <img src="../img/logo2.png" alt="Logo da empresa" class="d-inline-block" width="70" height="70">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-link text-nowrap fw-medium me-3">Destinos</a>
+                    <a href="#" class="nav-link text-nowrap fw-medium me-3">Planos de Viagem</a>
+                    <a href="#" class="nav-link text-nowrap fw-medium me-3">Sobre Nós</a>
+                    <a href="#" class="nav-link text-nowrap fw-medium me-3" id="login">Cadastro / Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Apresentação Inicial -->
+    <div class="position-relative">
+        <img src="/Front-end/img/aviao-inicial.jpg" alt="" class="position-relative w-100">
+        <div class="text-overlay position-absolute top-50 start-50 translate-middle text-center">
+            <h1 class="text-white fw-medium text-nowrap">Sua viagem começa aqui!</h1>
+        </div>
+
+        <form action="#" method="post">
+            <div class="search position-relative start-50 translate-middle-x m-auto">
+                <div class="inputs d-flex flex-wrap justify-content-between p-4 bg-white shadow gap-3" style="height: 200px;">
+                  <div class="form-group col-md-2">
+                    <label for="location" class="text-dark fw-medium">Destino</label>
+                    <input type="text" class="form-control" id="location" placeholder="São Paulo - SP">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="check-in" class="text-dark fw-medium">Check-in</label>
+                    <input type="date" class="form-control" id="check-in">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="check-out" class="text-dark fw-medium">Check-out</label>
+                    <input type="date" class="form-control" id="check-out">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="guests" class="text-dark fw-medium">Pessos</label>
+                    <input type="text" class="form-control" id="guests" placeholder="4 Adults">
+                  </div>
+                  <div class="d-block justify-content-center col-md-4"> <!-- Alterado para d-flex e justify-content-center -->
+                    <button type="submit" class="btn fw-medium" id="searchButton">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Cards -->
+    <div class="container-fluid position-absolute mt-5">
+        <div class="text-center">
+            <h2 class="fw-semibold">Pacotes Populares</h2>
+            <p class="text-xl font-medium text-gray-400"><i>Viajar não precisar ser caro</i></p>
+        </div>
+    
+        <div class="container-fluid mt-5">
+            <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/estatua-decorada-do-deus-hindu-tradicional-bali-indonesia_158538-26282.jpg?w=360&t=st=1698781931~exp=1698782531~hmac=d575d7c907ca9caad88f48060aec31627fda89da4f380742213d73d6248b28f0" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">Bali - Indonésia</h3>
+                                                <p class="card-text text-sm">3 Dias 3 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/foto-vertical-da-hipnotizante-montanha-de-machu-picchu-em-um-dia-nublado_181624-10704.jpg?w=360&t=st=1698781968~exp=1698782568~hmac=24155f87a4d97890fb2b5058ec69e377f8ef943d66df46808b96b4f0893ec7f7" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">Machu Pichu - Peru</h3>
+                                                <p class="card-text text-sm">3 Dias 2 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/vista-panoramica-na-cidade-grande-a-noite_1153-3640.jpg?w=360&t=st=1698782191~exp=1698782791~hmac=caf34f1b84eb710132563db906b4d5efe3975c02b56b54596dbf5fec77c3994b" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">São Paulo - Brazil</h3>
+                                                <p class="card-text text-sm">3 Dias 3 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/vista-panoramica-na-cidade-grande-a-noite_1153-3640.jpg?w=360&t=st=1698782191~exp=1698782791~hmac=caf34f1b84eb710132563db906b4d5efe3975c02b56b54596dbf5fec77c3994b" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">São Paulo - Brazil</h3>
+                                                <p class="card-text text-sm">3 Dias 3 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row ">
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/torre-eiffel-como-o-famoso-marco-da-cidade-em-paris_649448-4835.jpg?w=360&t=st=1698781464~exp=1698782064~hmac=db59d782d365847fedf75097ba821f60c3665c5ebaae310ace69aca1e935db84" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">Paris - França</h3>
+                                                <p class="card-text text-sm">3 Dias 3 noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/bondinho-do-pao-de-acucar-durante-o-por-do-sol_181624-36743.jpg?w=360&t=st=1698781620~exp=1698782220~hmac=73b4bc14c71cc875f880bdc54dbee59f96fb1cc60a53832e18772e6cb33e550c" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">Rio de Janeiro - Brazil</h3>
+                                                <p class="card-text text-sm">5 Dias 4 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/midtown-manhattan-nova-york-eua_181624-12210.jpg?w=360&t=st=1698781759~exp=1698782359~hmac=5131b73ea97f7a8e0f0070be1581380b9c8d6273f67eb150802d33b37dc069ed" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">New York - EUA</h3>
+                                                <p class="card-text text-sm">5 Dias 4 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <a href="#">
+                                    <div class="card mb-4 rounded overflow-hidden" style="height: 400px; width: 300px;">
+                                        <img src="https://img.freepik.com/fotos-gratis/midtown-manhattan-nova-york-eua_181624-12210.jpg?w=360&t=st=1698781759~exp=1698782359~hmac=5131b73ea97f7a8e0f0070be1581380b9c8d6273f67eb150802d33b37dc069ed" alt="ok" class="card-img-top">
+                                        <div class="card-img-overlay">
+                                            <div class="details text-white">
+                                                <h3 class="card-title text-xl font-medium">New York - EUA</h3>
+                                                <p class="card-text text-sm">5 Dias 4 Noites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <a class="carousel-control-prev" href="#cardCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#cardCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cards 2 -->
+        <div class="container d-flex justify-content-center align-items-center gap-4 mb-3 p-3">
+            <div class="card col-md-4 text-center  shadow-lg border-0 p-2" style="width: 300px; height: 200px;">
+                <div class="card-img p-1">
+                    <img style="width: 40px; height: 40px;" src="https://uxwing.com/wp-content/themes/uxwing/download/internet-network-technology/globe-network-color-icon.png" alt="">
+                </div>
+                <p class="card-title fw-medium h4 m-0">Variedade</p>
+                <p class="card-body text-muted text-body m-0">+ de 100 destinos incríveis </p>
+                <div class="mb-1">
+                    <a href="#" class="btn fw-medium" id="searchButton" >Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card col-md-4 text-center shadow border-0 p-2" style="width: 300px; height: 200px;">
+                <div class="card-img p-1">
+                    <img style="width: 40px; height: 40px;" src="https://uxwing.com/wp-content/themes/uxwing/download/location-travel-map/check-in-icon.png" alt="">
+                </div>
+                <p class="card-title fw-medium h4 m-0">Melhores Destinos</p>
+                <p class="card-body text-muted text-body m-0">Para trabalho ou lazer</p>
+                <div class="mb-1">
+                    <a href="#" class="btn fw-medium" id="searchButton" >Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card col-md-4 text-center shadow border-0 p-2" style="width: 300px; height: 200px;">
+                <div class="card-img p-1">
+                    <img style="width: 40px; height: 40px;" src="https://uxwing.com/wp-content/themes/uxwing/download/time-and-date/reservation-icon.png" alt="">
+                </div>
+                <p class="card-title fw-medium h4 m-0">Reserva Fácil</p>
+                <p class="card-body text-muted text-body m-0">Compre com um clique</p>
+                <div class="mb-1">
+                    <a href="#" class="btn fw-medium" id="searchButton" >Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vídeo Apresentação -->
+        <div class="container position-absolut overflow-hidden mt-6">
+            <video style="height: auto;" class="w-100 rounded-4 overflow-hidden" src="https://ik.imagekit.io/imgkitt/production_id_4662765%20(1080p).mp4?updatedAt=1698431795982" alt="video" autoPlay loop controls></video>
+        </div>
+
+
+
+        
+
+
+
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut explicabo aspernatur ad odit ea, voluptas dolor nobis sint nemo repudiandae, illo incidunt quaerat sed tempore culpa, suscipit hic dolores unde. Atque magnam expedita quidem amet, autem quae, sunt fugiat velit perferendis doloremque omnis rem temporibus quaerat! Laborum atque, quidem earum maxime neque eaque quasi, reprehenderit aut nam vero ducimus assumenda vitae tenetur officia asperiores a nemo harum. Iste, sint temporibus. Cupiditate illum quo exercitationem temporibus cumque! Ipsa corporis dolorem unde fuga dolore eius necessitatibus amet deserunt minima? Omnis ipsum tempora illum repudiandae alias, modi suscipit laudantium nulla expedita, eum accusamus et perferendis corrupti dolore temporibus. Modi quibusdam aliquid eligendi sed. Laboriosam sit libero doloribus provident sapiente aliquam corrupti, porro, repellendus rem accusantium voluptatum eos officiis repellat vero? Pariatur quisquam quos doloremque possimus voluptatibus? Nihil est illo amet vero cumque maxime aperiam quaerat animi harum, eum at! Maiores impedit sequi quibusdam exercitationem dignissimos saepe. Modi alias veritatis repudiandae minus obcaecati nemo molestias quod vel cumque, maiores et omnis eius quam reprehenderit laborum suscipit nisi nulla porro optio dolorem officiis tempora numquam nihil. Incidunt architecto sed assumenda officia laborum inventore dicta. Accusamus magnam dolore, sunt exercitationem voluptates laudantium cupiditate, asperiores maiores placeat possimus, eligendi optio veritatis eveniet cum inventore ullam. Itaque quasi iure veniam magni voluptas iusto perspiciatis culpa? Officia accusantium nesciunt provident eaque nulla a esse. Placeat nobis odit quam sapiente voluptatibus incidunt quia sint dolorem blanditiis aperiam nihil quidem explicabo, quisquam possimus repellendus libero eveniet, ex repudiandae numquam commodi. Repellat cumque iusto eos neque placeat delectus veniam rerum sunt quidem facilis ducimus voluptatem quia aut, dolor repellendus dolorem nobis id dolorum eius voluptas nostrum cupiditate autem? Sed architecto consequuntur voluptate totam id, quaerat sit impedit distinctio dolorum, quas tenetur? Blanditiis exercitationem, consequuntur reprehenderit ratione ex in eligendi beatae nulla? Hic at eveniet vel quae vitae quasi incidunt! Quidem magni nam totam ad nemo sit facilis, omnis tempora perspiciatis, cum rem esse dignissimos tenetur voluptatibus temporibus soluta, eos ratione eligendi. Eligendi quibusdam at, expedita quaerat repellat eveniet explicabo consequuntur rerum voluptatem, et earum ratione, placeat id! Accusamus eligendi quidem ipsa laborum beatae, sequi quod nulla non! Non dolorum fugit corporis sequi dolore dignissimos ut perspiciatis quo, delectus eum illum quis atque optio nisi deserunt nesciunt unde accusantium, quam adipisci, dolor rem! Incidunt vitae libero porro aspernatur illum ad hic blanditiis ducimus, quibusdam quas dolores voluptatum illo soluta pariatur. Dolores odit cupiditate saepe unde rem consequuntur nisi recusandae sapiente expedita, eaque eius itaque ex nemo modi, magni reprehenderit nihil, mollitia repudiandae dolorum ad! Sunt vero itaque enim atque ea maiores consequatur? Temporibus, porro totam molestias corrupti officia delectus! Soluta molestiae maiores maxime tenetur quas excepturi sint fugit? Voluptatibus, autem. Deleniti, mollitia natus modi ullam vitae repellat recusandae quam eaque incidunt ex quis consequatur cum ut inventore earum? Quod tempore culpa ad soluta, fugit tenetur odio fugiat incidunt necessitatibus rem ipsam cumque sit officia repudiandae consequatur, magnam dignissimos expedita hic? Fugit vitae, ad voluptas soluta dolore dolor deleniti libero, modi ea, illum ipsum?</div>
+
+    </div>
+
+
+
+
+
+    
+        
+    
+    
+</body>
+</html>
+
